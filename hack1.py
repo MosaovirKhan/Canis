@@ -11,11 +11,11 @@ def download_nltk_module(module_name):
         nltk.download(module_name)
 
 # Load the real data CSV file
-real_data = pd.read_csv("DataSet_Misinfo_TRUE.csv", usecols=[1], names=["text"], skiprows=1)
+real_data = pd.read_csv("DataSet_Misinfo_TRUE.csv", usecols=[1], names=["text"], skiprows=1, nrows = 30)
 real_data["label"] = "real"
 
 # Load the fake data CSV file
-fake_data = pd.read_csv("DataSet_Misinfo_FAKE.csv", usecols=[1], names=["text"], skiprows=1)
+fake_data = pd.read_csv("DataSet_Misinfo_FAKE.csv", usecols=[1], names=["text"], skiprows=1, nrows= 30)
 fake_data["label"] = "fake"
 
 # Combine the real and fake data into one DataFrame
